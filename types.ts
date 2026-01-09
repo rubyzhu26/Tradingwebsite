@@ -1,12 +1,4 @@
 
-export interface ActivitySuggestion {
-  title: string;
-  materials: string[];
-  instructions: string[];
-  mathConcept: string;
-  ageRange: string;
-}
-
 export interface Project {
   id: string;
   title: string;
@@ -18,4 +10,13 @@ export interface Project {
 export interface NavItem {
   label: string;
   href: string;
+}
+
+// Added missing interface for the Gemini AI activity generation results
+export interface ActivitySuggestion {
+  title: string;
+  materials: string[];
+  instructions: string[];
+  mathConcept: string;
+  ageRange: string;
 }

@@ -6,7 +6,6 @@ import Hero from './components/Hero';
 import Philosophy from './components/Philosophy';
 import About from './components/About';
 import ProjectCard from './components/ProjectCard';
-import ActivityGenerator from './components/ActivityGenerator';
 import Footer from './components/Footer';
 import Contact from './components/Contact';
 import { Project } from './types';
@@ -35,7 +34,7 @@ const PROJECTS: Project[] = [
   }
 ];
 
-type View = 'home' | 'philosophy' | 'about' | 'work' | 'lab' | 'contact';
+type View = 'home' | 'philosophy' | 'about' | 'work' | 'contact';
 
 const App: React.FC = () => {
   const [currentView, setCurrentView] = useState<View>('home');
@@ -49,7 +48,7 @@ const App: React.FC = () => {
       return;
     }
 
-    const validViews: View[] = ['philosophy', 'about', 'work', 'lab', 'contact'];
+    const validViews: View[] = ['philosophy', 'about', 'work', 'contact'];
     if (validViews.includes(hash as View)) {
       setCurrentView(hash as View);
       window.scrollTo({ top: 0, behavior: 'auto' });
@@ -93,8 +92,6 @@ const App: React.FC = () => {
             </section>
           </div>
         );
-      case 'lab':
-        return <div key="lab" className="page-transition"><ActivityGenerator isFullPage /></div>;
       case 'contact':
         return <div key="contact" className="page-transition"><Contact /></div>;
       default:
